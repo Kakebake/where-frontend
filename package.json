@@ -8,9 +8,10 @@
     "prettier": "^1.17.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4",
     "react-google-maps": "^9.4.5",
     "react-redux": "^5.0.7",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "1.1.4",
     "recompose": "^0.30.0",
     "redux": "^4.0.0"
   },

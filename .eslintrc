@@ -11,7 +11,8 @@
     "eslint-config-airbnb-base",
     "eslint-config-airbnb-base/rules/strict",
     "eslint-config-airbnb/rules/react",
-    "prettier"
+    "prettier",
+    "react-app"
   ],
   "plugins": ["react", "react-native", "prettier", "babel"],
   "globals": {
