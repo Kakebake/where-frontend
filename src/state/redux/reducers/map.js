@@ -10,7 +10,7 @@ export const reset = () => ({
 
 const initialState = {
   complete: false,
-  title: 'This is a title'
+  title: 'Where Fashion'
 };
 
 export default function mapReducer(state = initialState, action) {

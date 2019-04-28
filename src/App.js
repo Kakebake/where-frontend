@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
 import './features/map/MapScreen';
 import MapScreen from './features/map/MapScreen';
+import ListScreen from './features/list/ListScreen';
 
 class App extends Component {
   render() {
@@ -12,10 +12,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 style={{ color: 'white' }} className="App-title">
-              {this.props.map.title}
-            </h1>
+            <h1 className="App-title">{this.props.map.title}</h1>
             <Link to="/map" className="App-link">
               Map
             </Link>
@@ -31,7 +28,7 @@ class App extends Component {
           </header>
           <body>
             <Route path="/map" component={MapScreen} />
-            <Route path="/list" component={List} />
+            <Route path="/list" component={ListScreen} />
             <Route path="/add" component={Add} />
             <Route path="/profile" component={Profile} />
           </body>
@@ -40,10 +37,6 @@ class App extends Component {
     );
   }
 }
-
-const List = () => {
-  return <p className="App-intro">Listlist</p>;
-};
 
 const Add = () => {
   return <p className="App-intro">Addadd</p>;
