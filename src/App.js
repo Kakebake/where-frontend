@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
-import './features/map/MapScreen';
 import MapScreen from './features/map/MapScreen';
 import ListScreen from './features/list/ListScreen';
 
