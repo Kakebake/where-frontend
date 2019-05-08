@@ -1,38 +1,42 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import './App.css';
-import MapScreen from './features/map/MapScreen';
-import ListScreen from './features/list/ListScreen';
+import { MapScreen } from './features/map';
+import { ListScreen } from './features/list';
+import { StoreScreen } from './features/store';
+import { BrandScreen } from './features/brand';
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">{this.props.map.title}</h1>
-            <Link to="/map" className="App-link">
-              Map
-            </Link>
-            <Link to="/list" className="App-link">
-              List
-            </Link>
-            <Link to="/add" className="App-link">
-              Add
-            </Link>
-            <Link to="/profile" className="App-link">
-              Profile
-            </Link>
-          </header>
-          <body>
-            <Route path="/map" component={MapScreen} />
-            <Route path="/list" component={ListScreen} />
-            <Route path="/add" component={Add} />
-            <Route path="/profile" component={Profile} />
-          </body>
+      <div className="App">
+        <header className="App-header">
+          <h1 className="App-title">{this.props.map.title}</h1>
+          <Link to="/map" className="App-link">
+            Map
+          </Link>
+          <Link to="/list" className="App-link">
+            List
+          </Link>
+          <Link to="/add" className="App-link">
+            Add
+          </Link>
+          <Link to="/profile" className="App-link">
+            Profile
+          </Link>
+        </header>
+        <div>
+          <Route path="/map" component={MapScreen} />
+          <Route path="/list" component={ListScreen} />
+          <Route path="/add" component={Add} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/store" component={StoreScreen} exact />
+          <Route path="/store/:id" component={StoreScreen} />
+          <Route path="/brand" component={BrandScreen} exact />
+          <Route path="/brand/:id" component={BrandScreen} />
         </div>
-      </Router>
+      </div>
     );
   }
 }

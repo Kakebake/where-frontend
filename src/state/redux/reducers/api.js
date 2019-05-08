@@ -10,8 +10,10 @@ export const reset = () => ({
 
 const initialState = {
   complete: false,
-  shops: [
+  a: 'aaa',
+  stores: [
     {
+      id: 'hevnhevn',
       name: 'Hevn',
       streetAddress: 'Torggata 36 A',
       zipCode: '0183',
@@ -19,9 +21,12 @@ const initialState = {
       country: 'Norway',
       brands: ['Army Of Me', 'Avatar', 'Niløs', 'Norwegian Rain'],
       header: '',
-      gallery: ''
+      gallery: '',
+      url: 'https://hevn.no/',
+      info: 'This is a fashion store'
     },
     {
+      id: 'rainrain',
       name: 'Norwegian Rain',
       streetAddress: 'Karl Johans gate 41B',
       zipCode: '0162',
@@ -29,32 +34,45 @@ const initialState = {
       country: 'Norway',
       brands: ['Norwegian Rain', 'T-Michael'],
       header: '',
-      gallery: ''
+      gallery: '',
+      url: 'https://norwegianrain.com/',
+      info: 'This is a fashion store'
     }
   ],
   brands: [
     {
+      id: 'army',
       name: 'Army Of Me',
+      info: 'This is a fashion brand',
+      url: 'https://www.armyofmedesign.com/',
       shops: ['Hevn']
     },
     {
+      id: 'avatar',
       name: 'Avatar',
+      info: 'This is a fashion brand',
+      url: 'http://www.fashion.com',
       shops: ['Hevn']
     },
     {
+      id: 'nilos',
       name: 'Niløs',
+      info: 'This is a fashion brand',
+      url: 'http://www.julius-garden.jp/',
       shops: ['Hevn']
     },
     {
-      name: 'Avatar',
-      shops: ['Hevn']
-    },
-    {
+      id: 'rain',
       name: 'Norwegian Rain',
+      info: 'This is a fashion brand',
+      url: 'https://norwegianrain.com/',
       shops: ['Hevn', 'Norwegian Rain']
     },
     {
+      id: 'tt',
       name: 'T-Michael',
+      info: 'This is a fashion brand',
+      url: 'https://www.t-michael.com/',
       shops: ['Norwegian Rain']
     }
   ]

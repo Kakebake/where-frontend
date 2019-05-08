@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { StoreList, BrandList } from '../../components/list';
 import './ListScreen.css';
 
 class ListScreen extends Component {
@@ -8,20 +9,11 @@ class ListScreen extends Component {
       <div className="ListScreen">
         <div className="ListScreen-leftList">
           <p className="ListScreen-listHeader">Stores</p>
-          <ul>
-            <li>Store one</li>
-            <li>Store two</li>
-            <li>Store three</li>
-          </ul>
+          <StoreList stores={this.props.api.stores} />
         </div>
         <div className="ListScreen-rightList">
           <p className="ListScreen-listHeader">Brands</p>
-          <ul className="ListScreen-list">
-            <li>Brand one</li>
-            <li>Brand two</li>
-            <li>Brand three</li>
-            <li>s</li>
-          </ul>
+          <BrandList brands={this.props.api.brands} />
         </div>
       </div>
     );
@@ -30,4 +22,8 @@ class ListScreen extends Component {
 
 ListScreen.propTypes = {};
 
-export default connect(ListScreen);
+const mapStateToProps = state => ({
+  ...state
+});
+
+export default connect(mapStateToProps)(ListScreen);
