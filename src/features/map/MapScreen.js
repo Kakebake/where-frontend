@@ -1,17 +1,17 @@
 import React from 'react';
 
-import Map from './Components/Map';
+import { Map } from './Components';
 
 const MapScreen = () => (
-  <p>
-    <p>MapScreen</p>
+  <div>
+    <div>MapScreen</div>
     <Map
-      googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+      googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyACupBGTNuSFEjjao9Vi6FKISGlZt2fomU"
       loadingElement={<div style={{ height: `100%` }} />}
       containerElement={<div style={{ height: `400px` }} />}
       mapElement={<div style={{ height: `100%` }} />}
     />
-  </p>
+  </div>
 );
 
 MapScreen.propTypes = {};

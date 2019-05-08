@@ -10,15 +10,15 @@ import {
 const Map = withScriptjs(
   withGoogleMap(props => {
     return (
-      <p>
-        <p>Map</p>
+      <div>
+        <div>Map</div>
         <GoogleMap
           defaultZoom={8}
           defaultCenter={{ lat: -34.397, lng: 150.644 }}
         >
           {<Marker position={{ lat: -34.397, lng: 150.644 }} />}
         </GoogleMap>
-      </p>
+      </div>
     );
   })
 );
