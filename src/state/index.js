@@ -1,5 +1,3 @@
-import configureStore from './redux/configureStore';
-import * as reducers from './redux/reducers';
+import { StateContext, StateProvider, useStateValue } from './State';
 
-export { configureStore };
-export { reducers };
+export { StateContext, StateProvider, useStateValue };

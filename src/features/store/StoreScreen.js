@@ -1,33 +1,29 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+import { useStateValue } from '../../state';
 import './StoreScreen.css';
 import { StoreList } from '../../components/list';
 
-class StoreScreen extends Component {
-  store = this.props.api.stores.find(store => {
-    return store.id === this.props.match.params.id;
+const StoreScreen = props => {
+  const [{ stores }] = useStateValue();
+
+  const store = stores.find(store => {
+    return store.id === props.match.params.id;
   });
 
-  render() {
-    return (
-      <div className="StoreScreen">
-        {this.store && (
-          <div>
-            <div>{this.store.name}</div>
-            <div>{this.store.info}</div>
-            <div>{this.store.url}</div>
-          </div>
-        )}
-        {!this.store && <StoreList stores={this.props.api.stores} />}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="StoreScreen">
+      {store && (
+        <div>
+          <div>{store.name}</div>
+          <div>{store.info}</div>
+          <div>{store.url}</div>
+        </div>
+      )}
+      {!store && <StoreList stores={props.api.stores} />}
+    </div>
+  );
+};
 
 StoreScreen.propTypes = {};
 
-const mapStateToProps = state => ({
-  ...state
-});
-
-export default connect(mapStateToProps)(StoreScreen);
+export default StoreScreen;

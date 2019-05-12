@@ -1,41 +1,36 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useStateValue } from '../../state';
 import './BrandScreen.css';
 
-class BrandScreen extends Component {
-  brand = this.props.api.brands.find(brand => {
-    return brand.id === this.props.match.params.id;
+const BrandScreen = props => {
+  const [{ brands }] = useStateValue();
+
+  const brand = brands.find(brand => {
+    return brand.id === props.match.params.id;
   });
 
-  render() {
-    console.log('The props are', this.props.match.params.id);
-    return (
-      <div className="BrandScreen">
-        {this.brand && (
-          <div>
-            <div>{this.brand.name}</div>
-            <div>{this.brand.info}</div>
-            <div>{this.brand.url}</div>
-          </div>
-        )}
-        {!this.brand && (
-          <div>
-            <div>Brand not found.</div>
-            <Link to="/list" className="App-link">
-              List
-            </Link>
-          </div>
-        )}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="BrandScreen">
+      {brand && (
+        <div>
+          <div>{brand.name}</div>
+          <div>{brand.info}</div>
+          <div>{brand.url}</div>
+        </div>
+      )}
+      {!brand && (
+        <div>
+          <div>Brand not found.</div>
+          <Link to="/list" className="App-link">
+            List
+          </Link>
+        </div>
+      )}
+    </div>
+  );
+};
 
 BrandScreen.propTypes = {};
 
-const mapStateToProps = state => ({
-  ...state
-});
-
-export default connect(mapStateToProps)(BrandScreen);
+export default BrandScreen;
