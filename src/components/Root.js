@@ -21,7 +21,9 @@ const Root = () => {
         header: '',
         gallery: '',
         url: 'https://hevn.no/',
-        info: 'This is a fashion store'
+        info: 'This is a fashion store',
+        latitude: '',
+        longitude: ''
       },
       {
         id: 'rainrain',
@@ -34,7 +36,9 @@ const Root = () => {
         header: '',
         gallery: '',
         url: 'https://norwegianrain.com/',
-        info: 'This is a fashion store'
+        info: 'This is a fashion store',
+        latitude: '',
+        longitude: ''
       }
     ],
     brands: [
